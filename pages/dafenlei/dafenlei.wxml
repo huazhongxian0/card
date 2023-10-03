@@ -1,0 +1,14 @@
+<!--pages/dafenlei/dafenlei.wxml-->
+<navigation-bar back="{{false}}" background-color=""></navigation-bar>
+
+<navigator class="back" hover-class="backfo" open-type="navigateBack">
+  <image src="../iconfonts/返回.png" style="height:70rpx ;width:70rpx"></image>
+</navigator>
+<scroll-view scroll-y> 
+<view></view>
+<view></view>
+<view></view>
+<view></view>
+<view></view>
+<view></view>
+</scroll-view>

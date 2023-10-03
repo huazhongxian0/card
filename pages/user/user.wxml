@@ -1,0 +1,22 @@
+<!--pages/user/user.wxml-->
+<navigation-bar title="个人中心" back="{{false}}" color="black" background-color="#9fa8a3" style="width:750rpx;"></navigation-bar>
+
+<!-- 第一个大框，就有头像有登录内个 -->
+<!-- 登录后的页面 -->
+<view wx:if="{{logincondition}}" style="display: inline-block;" class="diyipaiban">
+<image src="./认证.png" class="profile" mode="aspectFit"></image>
+</view>
+<!-- 没登录的页面 -->
+<view wx:else="{{}}" style="display: inline-block;" class="diyipaiban">
+<image src="./认证.png" class="profile" mode="aspectFit"></image>
+<button bindtap="login" class="login" bindtap="onlogin">登录</button>
+</view>
+
+<!-- 设置 -->
+<view class="setting" bindtap="tosetting" >
+<image src="./设置.png" class="setting1" ></image>
+<view class="setting2">设置</view>
+</view>
+
+
+

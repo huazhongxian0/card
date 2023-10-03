@@ -1,0 +1,10 @@
+<!--pages/make/make.wxml-->
+<navigation-bar back="{{false}}" background-color=""></navigation-bar>
+
+<navigator class="back" hover-class="backfo" open-type="navigateBack">
+  <image src="../iconfonts/返回.png" style="height:70rpx ;width:70rpx"></image>
+</navigator>
+<view class="url" style="background-image: url({{url}});"></view>
+  <view class="oppositeurl" style="background-image: url({{oppositeurl}});">
+<textarea class="text" value=""  style="height:200px;width:900px;word-break:break-word"/>
+  </view>

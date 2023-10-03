@@ -1,0 +1,52 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/user/user",
+    "pages/dafenlei/dafenlei",
+    "pages/login/login",
+    "pages/setting/setting",
+    "pages/make/make"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#2f4b6b",
+    "navigationBarTitleText": "你好",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": false
+  },
+  
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "./iconfonts/首页-置灰.png",
+        "selectedIconPath": "./iconfonts/首页-置灰 (1).png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "iconPath": "./iconfonts/个人中心-置灰.png",
+        "selectedIconPath": "./iconfonts/个人中心-置灰 (1).png",
+        "text": "用户"
+      }
+    ]
+  },
+
+  "renderer": "skyline",
+  "rendererOptions": {
+    "skyline": {
+      "defaultDisplayBlock": true,
+      "disableABTest": true,
+      "sdkVersionBegin": "3.0.0",
+      "sdkVersionEnd": "15.255.255"
+    }
+  },
+  "componentFramework": "glass-easel",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents",
+  "usingComponents": {
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index"
+  }
+  
+}

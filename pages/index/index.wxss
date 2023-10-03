@@ -1,0 +1,150 @@
+/**index.wxss**/
+
+page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  align-items: center;
+  min-height: 100vh;
+background-color: rgb(20,68,106);
+filter: brightness(100%);
+scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;   }
+
+.aa{
+  text-align: center;
+  background-color:lavenderblush;
+  font-weight: 600;
+  width: 125rpx;
+  height: 80rpx;
+display: inline-block;
+   line-height: 80rpx;
+   
+   transition-delay: 0s;
+   
+}
+.ab{
+  color: green;
+  text-align: center;
+   background-color:#9fa8a3;
+   width: 125rpx;
+   height: 80rpx;
+ display: inline-block;
+ transition: 2s;
+   transition-delay: 0s;
+   transform: scale(1.2);
+   animation-name: AA;
+   animation-duration: 1s;
+}
+@keyframes  AA{
+0%{}
+}
+
+.xiaofenleibutton{
+  height: 80rpx;
+  background-color:skyblue;
+  position:absolute;
+  top: 385rpx;
+  left: 627rpx;
+ font-weight: 600;
+ display: inline-block;
+ line-height: 80rpx;
+ text-align: center;
+}
+.xiaofenleibutton1{
+  height: 80rpx;
+  background-color:red;
+  position:absolute;
+  top: 385rpx;
+  left: 627rpx;
+ font-weight: 600;
+ display: inline-block;
+ line-height: 80rpx;
+ text-align: center;
+}
+.daohanglan{
+  color: black;
+  height: 80rpx;
+  width: 750rpx;
+ white-space: nowrap;
+ position: relative;
+ left: -130rpx;
+}
+
+.lunbotu{
+  height: 384rpx;
+ width: 750rpx;
+ margin-bottom: 0em;
+}
+.lunbotu1{
+  background-color: red;
+  text-align: center;
+}
+.lunbotu2{
+  background-color: blue;
+  text-align: center;
+}
+.lunbotu3{
+  background-color:black;
+  text-align: center;
+}
+
+.fenlei{
+  background-color: thistle;
+  display: inline-block;
+  width: 26em;
+  height: 10em;
+  margin: 0px;
+}
+ .anniu{
+width: 5em;
+height: 4.5em;
+margin-bottom: 0.24em;
+color: blue;
+display: inline-block;
+} 
+.dibulanyemian{
+  display:inline-block;
+}
+.xiaofenleidaohanglan{
+  width: 750rpx;
+  height: 800rpx;
+  background-color:blue;
+}
+.xiaofenleidaohanglanneironghuadongkuang{
+  width: 750rpx;
+  height: 850rpx;
+}
+.xiaofenleidaohanglanneirong{
+  width: 360rpx;
+  height: 300rpx;
+  background-color:red;
+  margin: 7.9rpx;
+  display: inline-block;
+}
+.xiaofenleidaohanglanneirongimage{
+  width: 360rpx;
+  height: 240rpx;
+  display: inline-block;
+margin: 0;
+padding: 0;
+}
+.xiaofenleineirongbutton{
+  width: 160rpx;
+  height: 60rpx;
+  position: relative;
+  top: -20rpx;
+  background-color:white;
+  margin: 11rpx;
+  display: inline-block;
+  text-align: center;
+   
+}
