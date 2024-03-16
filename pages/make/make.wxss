@@ -30,35 +30,123 @@ scroll-behavior: smooth;
   height: 360rpx;
   display: inline-block;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100% 100%;
   position: relative;
   top: 100rpx;
-  
 }
 .text{
-  position: relative;
-  font-size: 85%;
-  top: 130rpx;
-  left: 380rpx;
-  word-wrap: break-word;
-    width: 250rpx;
+  font-size: 100%;
+  border: 1rpx solid;
+  word-wrap: normal;
+  height:200rpx;
+  width:200rpx;
+  word-break: break-all;
+  display: inline-block;
 }
 .url{
- 
   width: 640rpx;
   height: 360rpx;
   display: inline-block;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100% 100%;
   position: relative;
-  top: 50rpx;
+  top: 5%;
+  
 }
 .oppositeurl{
   width: 640rpx;
   height: 360rpx;
   display: inline-block;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100% 100%;
   position: relative;
-  top: 200rpx;
+  top: 15%;
+}
+.qbutton{
+  width: 750rpx;
+  height: 25%;
+  position:absolute;
+  bottom: 0%;
+  box-shadow: 10rpx 10rpx 10rpx 10rpx black;
+}
+.van-tabs{
+  height: 33%;
+  width: 750rpx;
+  position:absolute;
+  bottom:30%;
+}
+.cheng{
+  display: inline-block;
+  position: absolute;
+}
+.fontSize{
+  background-color: white;
+  height: 25%;
+  width: 750rpx;
+  position: absolute;
+  bottom: 0%;
+}
+.tab :nth-child(1){
+  display: inline-block;
+  position: absolute;
+ bottom: 63%;
+ width: 90rpx;
+ height: 30%;
+  left: 25rpx;
+}
+.tab :nth-child(2){
+  display: inline-block;
+  position: absolute;
+  bottom: 63%;
+  left: 140rpx;
+  width: 90rpx;
+  height: 30%;
+}
+.tab :nth-child(3){
+  display: inline-block;
+  position: absolute;
+  bottom: 63%;
+  right: 400rpx;
+  height: 30%;
+  width: 90rpx;
+}
+.tab :nth-child(4){
+  display: inline-block;
+  position: absolute;
+  bottom: 63%;
+  width: 90rpx;
+  right: 285rpx;
+  height: 30%;
+}
+.tab :nth-child(5){
+  display: inline-block;
+  position: absolute;
+  bottom: 63%;
+  right: 175rpx;
+  width: 90rpx;
+  height: 30%;
+}
+.cheng1{
+  display: inline-block;
+  position: absolute;
+  bottom: 63%;
+  right: 0%;
+  width: 150rpx;
+  height: 30%;
+}
+.cheng2{
+  width: 150rpx;
+  height: 30%;
+  display:inline-block;
+  position:absolute;
+  right: 0%;
+}
+.input{
+  position:absolute;
+  border: 1px solid blue;
+  right: 150rpx;
+  width: 600rpx;
+  height: 30%;
+  bottom: 63%;
+  font-size: 150%;
 }

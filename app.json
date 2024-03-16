@@ -3,36 +3,43 @@
     "pages/index/index",
     "pages/user/user",
     "pages/dafenlei/dafenlei",
-    "pages/login/login",
     "pages/setting/setting",
-    "pages/make/make"
+    "pages/make/make",
+    "pages/preview/preview",
+    "components/navigation-bar/navigation-bar",
+    "components/component/wx",
+    "pages/history/history",
+    "pages/feedback/feedback",
+    "pages/feedback/write/write",
+    "pages/share/share"
   ],
   "window": {
+    "disableScroll": true,
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#2f4b6b",
-    "navigationBarTitleText": "你好",
+    "navigationBarBackgroundColor": "#333333",
+    "navigationBarTitleText": "互动式云端贺卡生成器",
     "navigationBarTextStyle": "white",
     "enablePullDownRefresh": false
   },
-  
   "tabBar": {
+    "backgroundColor": "#333333",
+    "color": "#350000",
+    "selectedColor": "#ffffff",
     "list": [
       {
         "pagePath": "pages/index/index",
-        "iconPath": "./iconfonts/首页-置灰.png",
-        "selectedIconPath": "./iconfonts/首页-置灰 (1).png",
+        "iconPath": "./iconfonts/首页-置灰 (3).png",
+        "selectedIconPath": "./iconfonts/10.png",
         "text": "首页"
       },
       {
         "pagePath": "pages/user/user",
-        "iconPath": "./iconfonts/个人中心-置灰.png",
-        "selectedIconPath": "./iconfonts/个人中心-置灰 (1).png",
+        "iconPath": "./iconfonts/个人中心-置灰 (3).png",
+        "selectedIconPath": "./iconfonts/个人中心-置灰 (4).png",
         "text": "用户"
       }
     ]
   },
-
-  "renderer": "skyline",
   "rendererOptions": {
     "skyline": {
       "defaultDisplayBlock": true,
@@ -46,7 +53,12 @@
   "lazyCodeLoading": "requiredComponents",
   "usingComponents": {
     "van-tab": "@vant/weapp/tab/index",
-    "van-tabs": "@vant/weapp/tabs/index"
+    "van-tabs": "@vant/weapp/tabs/index",
+    "van-button": "@vant/weapp/button/index",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-loading": "@vant/weapp/loading/index",
+    "van-tabbar": "@vant/weapp/tabbar/index",
+    "van-tabbar-item": "@vant/weapp/tabbar-item/index"
   }
-  
 }

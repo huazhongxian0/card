@@ -1,89 +1,99 @@
-
 Page({
   data:{
-  info:'nihao',
   count : 0,
   xiaofenlei:0,
-  con:[{ 
-    id:1,
-    url:"../iconfonts/wx_20230925201544.jpg", 
-    oppositeurl:"../iconfonts/wx_20230925201558.jpg",
-  },
-  {id:2, url:"../iconfonts/wx_20230925201558.jpg",oppositeurl:"../iconfonts/wx_20230925201544.jpg"},
-  {id:3,  url:"../iconfonts/wx_20230925201558.jpg",oppositeurl:"../iconfonts/wx_20230925201544.jpg"},
-  {id:4,  url:"../iconfonts/wx_20230925201558.jpg",oppositeurl:"../iconfonts/wx_20230925201544.jpg"},
-]
-  },
-  onChange(event) {
-// 更改标签可以在这里设置函数
-  },
-  setDataxiaofenleito0:function () {
-    this.setData({
-   xiaofenlei:0   
-    })
-   },
-   setcon:function() {
-     wx.request({
-       url: 'http://169.254.75.192:8080/img ',
-     success:function () {
-       console.log("成功了")
-     },
-     fail : function () {
-      console.log("失败了")
-    }
+  active:"",
+  classification:[{imageFrontUrl:'/pages/index/5.png',imageContraryUrl:'/pages/index/6.png'},],
+   carousel:[{imageFrontUrl:'/pages/index/5.png',imageContraryUrl:'/pages/index/6.png'}],
+   height:{},
+   scale:{}
+},
+getImage:function(){
+  let url = "https://hez1.cn:8080/wx/getImage"
+  wx.request({
+    url: url,
+    method:"POST",
+    data:{
+      type: 'carousel',
+      pageSize:10,
+      pageNumber:0,
+    },
+    header:{
+      'content-type':'appLication/json',
+    },
+    success:(res)=>{
+      const statusCode = res.statusCode;
+      console.log('响应状态码：', statusCode);
+      if (statusCode === 200) {
+        console.log("轮播图",res);
+        this.setData({
+          carousel: res.data.data.dataList
+        })
+      } else {
+        console.error('请求失败');
+      }
+},
+  });
+},
+getImageClass:function(classification){
+  let url = "https://hez1.cn:8080/wx/getImage"
+ 
+  wx.showLoading({
+    title: '数据加载中',
+  })
+  wx.request({
+    url: url,
+    method:"POST",
+    data:{
+      type: classification,
+      pageSize:10,
+     pageNumber:0,
+    },
+    header:{
+      'content-type':'appLication/json',
+    },
+    success:(res)=>{
+      const statusCode = res.statusCode;
+      console.log('响应状态码：', statusCode);
+      if (statusCode === 200) {
+        console.log("分类",res);
+        this.setData({
+          classification: res.data.data.dataList
+        });
+      } else {
+        console.error('请求失败');
+      }
+},
+complete:()=>{
+  wx.hideLoading()
+}
+  });
+  
+},
+onLoad(){
+// this.getImage()
+// this.getImageClass("all")
+    }, 
+onReady(){
+      wx.getSystemInfo({
+        success:(e)=>{
+    console.log("主页",e);
+this.setData({
+  height:e.windowHeight,
+   scale:750/e.screenWidth,
+})
+        },
       })
-     
-   },
-  setDataxiaofenleito1:function () {
+    },
+ onChange(event) {
+// 更改标签可以在这里设置函数
+  this.getImageClass(event.detail.name);
    this.setData({
-  xiaofenlei:1   
+     count: event.detail.index,
    })
   },
-  setDataxiaofenleito2:function () {
-    this.setData({
-   xiaofenlei:2   
-    })
-   },
-   setDataxiaofenleito3:function () {
-    this.setData({
-   xiaofenlei:3   
-    })
-    document.write('你好');
-   },
-   setDataxiaofenleito4:function () {
-    this.setData({
-   xiaofenlei:4
-    })
-   },
-   setDataxiaofenleito5:function () {
-    this.setData({
-   xiaofenlei:5 
-    })
-   },
-   setDataxiaofenleito6:function () {
-    this.setData({
-   xiaofenlei:6
-    })
-   },
-   setDataxiaofenleito7:function () {
-    this.setData({
-   xiaofenlei:7   
-    })
-   },
-   setDataxiaofenleito8:function () {
-    this.setData({
-   xiaofenlei:8
-    })
-   },
-   setDataxiaofenleito9:function () {
-    this.setData({
-   xiaofenlei:9
-    })
-   },
    onclick:function () {
-     wx.navigateTo({
-       url: '../dafenlei/dafenlei',
-     })
+  console.log();
    },
    onclickzhuye:function () {
     wx.navigateTo({
@@ -91,10 +101,43 @@ Page({
     })
   },
    onclickmake:function (e) {
+     const app = getApp();
+     if(app.globalData.logincondition == false){
+       wx.showModal({
+         title: '没有登录',
+         content: '您还没有登录，不登录不会记录历史记录的哦，您可以点击确定前去登录页，点击取消继续操作',
+         complete: (res) => {
+           if (res.cancel) {
+            wx.navigateTo({
+              url: `/pages/make/make?imagePath=${encodeURIComponent(e.currentTarget.dataset.param1)}&oppositeimagePath=${encodeURIComponent(e.currentTarget.dataset.param2)}&dir=${encodeURIComponent(0)}`,
+           })
+           }
+       
+           if (res.confirm) {
+             wx.switchTab({
+               url: '../user/user',
+               success: (res) => {},
+               fail: (res) => {},
+               complete: (res) => {},
+             })
+           }
+         }
+       })
+     }else{
       wx.navigateTo({
-         url: `/pages/make/make?imagePath=${encodeURIComponent(e.currentTarget.dataset.param1)}&oppositeimagePath=${encodeURIComponent(e.currentTarget.dataset.param2)}`,
+         url: `/pages/make/make?imagePath=${encodeURIComponent(e.currentTarget.dataset.param1)}&oppositeimagePath=${encodeURIComponent(e.currentTarget.dataset.param2)}&dir=${encodeURIComponent(0)}`,
       })
+    }
+  },
+  onclickpreview:function (e) {
+    wx.navigateTo({
+       url: `/pages/preview/preview?imagePath=${encodeURIComponent(e.currentTarget.dataset.param1)}&oppositeimagePath=${encodeURIComponent(e.currentTarget.dataset.param2)}`,
+    })
+  },
+  onReachBottom() {
+console.log("触发了上啦触底");
+  },
 
-  }
-   
+
+
 })

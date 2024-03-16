@@ -1,10 +1,58 @@
-<!--pages/make/make.wxml-->
-<navigation-bar back="{{false}}" background-color=""></navigation-bar>
 
-<navigator class="back" hover-class="backfo" open-type="navigateBack">
-  <image src="../iconfonts/返回.png" style="height:70rpx ;width:70rpx"></image>
-</navigator>
 <view class="url" style="background-image: url({{url}});"></view>
-  <view class="oppositeurl" style="background-image: url({{oppositeurl}});">
-<textarea class="text" value=""  style="height:200px;width:900px;word-break:break-word"/>
-  </view>
+
+  <movable-area class="oppositeurl" style="background-image: url({{oppositeurl}});" scale-area>
+    <movable-view direction="all" scale scale-min="0.5"  scale-max="10" bindchange='onchange12' bindscale="scale1" x="{{x1}}" y="{{y1}}" damping="1000">
+      <textarea class="text" value="{{input}}" style="font-size:{{fontSizeactive}}rpx; line-height: {{leading1Active}}rpx; {{styleText}}" onfocus="onchange"  bindinput="oninput1" >  
+      </textarea>
+    </movable-view>
+  </movable-area>
+
+<view class="fontSize">
+   <van-tabbar active="{{ active }}"  bind:change="onChange" class="van-tabs" fixed="{{false}}">
+  <van-tabbar-item>{{font}}</van-tabbar-item>
+  <van-tabbar-item>{{leadingText}}</van-tabbar-item>
+  </van-tabbar>
+  <view class="tab">
+<block wx:if="{{active === 0}}">
+<block wx:if="{{buttonIf == 0}}">
+<button class="cheng" bind:tap="scale2" data-index="1">1×</button>
+<button class="cheng" bind:tap="scale2" data-index="2">2×</button>
+<button class="cheng" bind:tap="scale2" data-index="3">3×</button>
+<button class="cheng" bind:tap="scale2" data-index="4">4×</button>
+<button class="cheng" bind:tap="scale2" data-index="5">5×</button>
+<button class="cheng1" bind:tap="onmy">自定义</button>
+</block>
+</block>
+
+<block wx:if="{{active === 1}}">
+<block wx:if="{{buttonIf == 0}}">
+<button class="cheng" bind:tap="leading" data-index="1">1×</button>
+<button class="cheng" bind:tap="leading" data-index="2">2×</button>
+<button class="cheng" bind:tap="leading" data-index="3">3×</button>
+<button class="cheng" bind:tap="leading" data-index="4">4×</button>
+<button class="cheng" bind:tap="leading" data-index="5">5×</button>
+<button class="cheng1" bind:tap="onmy2">自定义</button>
+</block>
+</block>
+</view>
+
+
+<view class="tab1">
+  <block wx:if="{{active === 0}}">
+<block wx:if="{{buttonIf == 1}}">
+<input type="text" class="input" value="{{text1}}"  onfocus="onchange1" bindinput="oninput"/>
+<button class="cheng1" bind:tap="submit1">确定</button>
+</block>
+</block>
+<block wx:if="{{active ===  1}}">
+<block wx:if="{{buttonIf == 3}}">
+<input type="text" class="input" value="{{leadingText1}}"  onfocus="onchange3" bindinput="oninput3"/>
+<button class="cheng1" bind:tap="submit3">确定</button>
+</block>
+</block>
+
+</view>
+
+<button class="qbutton" bind:tap="onclickon"><view style="font-size: small;">确定</view></button>
+</view>

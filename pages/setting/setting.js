@@ -7,7 +7,31 @@ Page({
   data: {
 
   },
+  losecondition(){
 
+    const app = getApp();
+    console.log(app.globalData.logincondition);
+    if(app.globalData.logincondition === false){
+    wx.showModal({
+      title: '没有登录',
+      content: '您还没有登录哦，点击确定可去登录页',
+      complete: (res) => {
+        if (res.cancel) {
+      
+        }
+    
+        if (res.confirm) {
+          wx.navigateBack();
+        }
+      }
+    })
+    }else{
+    app.globalData.logincondition = false;
+    console.log(app.globalData.logincondition);
+    wx.navigateBack();
+    }
+ 
+  },
   /**
    * 生命周期函数--监听页面加载
    */

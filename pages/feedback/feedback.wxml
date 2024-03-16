@@ -1,0 +1,17 @@
+<view class="feedbackContain">
+<scroll-view scroll-y class="sco">
+<block wx:for="{{feedbacktext}}">
+<view class="feedbackmessage">
+<view class="feedbackuser">匿名用户</view>
+  <view class="feedbackcontext">{{item.comment}}</view>
+</view>
+</block>
+</scroll-view>
+</view>
+<view class="inputContain">
+<view type="text" class="input"  bind:tap="gotowrite"><view class="font">发布你的评论</view></view>
+<view class="refresh" >
+  <view wx:if="{{refresh == 0}}"><van-icon name="replay" size="55rpx" bind:tap="refresh"/></view>
+  <view wx:if="{{refresh == 1}}"><van-loading color="#1989fa" /></view> 
+</view>
+</view>

@@ -1,0 +1,10 @@
+
+<navigation-bar back="{{false}}" background-color=""></navigation-bar>
+<image src="{{url}}" mode="" class="pos1" />
+<view class="perspective">
+<view class="con">
+<image src="{{url}}" mode="" class="front"/>
+<image src="{{oppositeurl}}" mode="" class="back1"/>
+</view>
+</view>
+<image src="{{oppositeurl}}" mode="" class="pos2" />

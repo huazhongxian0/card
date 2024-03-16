@@ -1,0 +1,16 @@
+/* pages/feedback/write/write.wxss */
+.send{
+  width: 750rpx;
+  height: 8%;
+  background-color: rgb(9, 159, 247);
+  position: absolute;
+  top: 90%;
+}
+textarea{
+  position:absolute;
+  width: 750rpx;
+  height:92%;
+   border: 1rpx solid red;
+  background-color: rgb(255, 253, 253);
+  font-size: 200%
+}

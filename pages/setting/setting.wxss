@@ -6,24 +6,23 @@ page {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  align-items: center;
+
   min-height: 100vh;
-background-color: rgb(20,68,106);
 filter: brightness(100%);
 scroll-behavior: smooth;
+background-color: rgb(253, 208, 208);
 }
-.back{
-  width: 70rpx;
-  height: 70rpx;
-  position: relative;
-  top: -80rpx;
-  left: -320rpx;
+.container{
+  background-color: rgb(253, 252, 252);
+  width: 600rpx;
+  height: 150rpx;
+  margin-top: 50rpx;
+  position: absolute;
+   margin-left: 75rpx;
+   border-radius: 50rpx;
+   box-shadow: 0rpx 5rpx 20rpx 0rpx black;
 }
-.backfo{
-  width: 70rpx;
-  height: 70rpx;
-  position: relative;
-  background-color: red;
-  top: -80rpx;
-  left: -320rpx;
+.text{
+padding-top: 60rpx;
+font-size: 120%;
 }

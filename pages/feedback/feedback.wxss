@@ -1,0 +1,77 @@
+/* pages/feedback/feedback.wxss */
+.font{
+  position: relative;
+  left: 40rpx;
+  top: 10rpx;
+}
+.sco{
+  width: 750rpx;
+  height: 100%;
+}
+.feedbackmessage{
+top: 0rpx;
+width: 700rpx;
+height: 20%;
+position: relative;
+box-shadow: 20rpx 500rpx 2000rpx 0rpx rgb(190, 166, 59);
+margin-bottom:100rpx;
+transform:translateX(25rpx)
+}
+.feedbackuser{
+  border-top-right-radius: 50rpx;
+  border-top-left-radius: 50rpx;
+  width: 700rpx;
+  height: 30%;
+  background-color:rgba(112, 55, 55,0.17);
+  color: rgb(29, 63, 37);
+  position:absolute;
+  box-shadow: 10rpx 10rpx 10rpx -10rpx rgb(255, 136, 0);
+  text-align: center;
+}
+.feedbackcontext{
+  word-wrap: break-word;
+  word-break: normal;
+  width: 700rpx;
+  height: 80%;
+  background-color: rgb(225, 225, 240);
+  border-bottom-left-radius: 50rpx;
+  border-bottom-right-radius: 50rpx;
+  position:absolute;
+  top: 30%;
+}
+.refresh{
+position:absolute;
+right: 30rpx;
+top: 22%;
+}
+.input{
+  width: 600rpx;
+  height: 60rpx;
+  border: rgb(224, 208, 208) solid 1rpx;
+  display: inline-block;
+  position: absolute;
+  top: 20%;
+  left: 5%;
+  border-radius: 50rpx;
+  background-color: rgb(240, 241, 244s);
+}
+.input:hover{
+  background-color: rgb(200, 200, 202);
+}
+.inputContain{
+  z-index: 10;
+  width: 750rpx;
+  height: 10%;
+  position:absolute;
+  bottom: 0rpx;
+  border: 1rpx solid rgba(34, 29, 29,0.5);
+  box-shadow:20rpx 20rpx 20rpx 20rpx rgb(22, 21, 21);
+  display: inline-block;
+  background-color: white;
+}
+.feedbackContain{
+  z-index: 1;
+  width: 750rpx;
+position:absolute;
+height: 90%;
+}

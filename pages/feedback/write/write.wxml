@@ -1,0 +1,5 @@
+<textarea value="{{input}}" onfocus="on" bindinput="input1"></textarea>
+<button class="send" bind:tap="send">发布</button>
+
+
+
