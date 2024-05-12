@@ -39,7 +39,12 @@ scroll-behavior: smooth;
   word-break: break-all;
 }
 .contain{
- 
   width: 750rpx;
   height: 100%;
+}
+.front{
+  display: inline-block;
+}
+.wxName{
+  color: red;
 }

@@ -26,7 +26,8 @@ leadingText1:"请输入一个数字",
 leading:50,
 leading1:1,
 leading1Active:50,
-styleText:{}
+styleText:{},
+wxName:""
   },
 onmy(){
 this.setData({
@@ -127,7 +128,7 @@ console.log(res);
 }
 
   wx.navigateTo({
-    url: `../share/share?url=${encodeURIComponent(this.data.url)}&oppositeurl=${encodeURIComponent(this.data.oppositeurl)}&scale=${encodeURIComponent(this.data.scale)}&fontSize=${encodeURIComponent(this.data.fontSizeactive)}&text=${encodeURIComponent(this.data.input)}&x=${encodeURIComponent(this.data.x)}&y=${encodeURIComponent(this.data.y)}&leading=${encodeURIComponent(this.data.leading1Active)}`,
+    url: `../share/share?url=${encodeURIComponent(this.data.url)}&oppositeurl=${encodeURIComponent(this.data.oppositeurl)}&scale=${encodeURIComponent(this.data.scale)}&fontSize=${encodeURIComponent(this.data.fontSizeactive)}&text=${encodeURIComponent(this.data.input)}&x=${encodeURIComponent(this.data.x)}&y=${encodeURIComponent(this.data.y)}&leading=${encodeURIComponent(this.data.leading1Active)}&wxName=${this.data.wxName}`,
   })
 
 },
@@ -135,6 +136,10 @@ console.log(res);
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+    const a = getApp();
+    this.setData({
+      wxName:a.globalData.wxName
+    })
     console.log(options);
    if (options.dir=="0") {
     let imagePath = decodeURIComponent(options.imagePath);
@@ -145,7 +150,7 @@ console.log(res);
       });
    }else{
    console.log(options);
-   const a = getApp();
+  
    let b = 750/a.globalData.screen;
 this.setData({
     url: decodeURIComponent(options.url),

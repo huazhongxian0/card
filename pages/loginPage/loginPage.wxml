@@ -1,0 +1,34 @@
+<!--pages/loginPage/loginPage.wxml-->
+<view class="navg" style="height: {{navHeight}}px;">
+    <image class="back" src="../../iconfonts/返回.png" bind:tap="backToHome"></image>
+</view>
+
+<view class="page" style="height:{{height}}px">
+  <view class="loginPlace">
+  <van-cell-group style="width: 750rpx;">
+    <van-field
+      value="{{ username }}"
+      label="用户名"
+      bindinput = 'input'
+      id='username'
+      placeholder="请输入用户名"
+      size='large'
+      border='{{true}}'
+      clearable='{{true}}'
+    />
+    <van-field
+      value="{{ password }}"
+      label="密码"
+      type='password'
+      id="password"
+      bindinput='input'
+      placeholder="请输入密码"
+      size='large'
+      border='{{true}}'
+      clearable='{{true}}'
+    />
+  </van-cell-group>
+  <van-button plain type="info" bind:tap="submit" class="btn" size='large'>登录/注册</van-button>
+  </view>
+  <image class="img" src="../../iconfonts/微信.png" mode="aspectFit" class="wxLogin" bind:tap="onlogin" />
+</view>

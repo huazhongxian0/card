@@ -1,14 +1,10 @@
 // pages/login/login.js
 Page({
-
   /**
    * 页面的初始数据
    */
-  data: {
-
-  },
-  losecondition(){
-
+  data: {},
+  unlogin(){
     const app = getApp();
     console.log(app.globalData.logincondition);
     if(app.globalData.logincondition === false){
@@ -16,10 +12,7 @@ Page({
       title: '没有登录',
       content: '您还没有登录哦，点击确定可去登录页',
       complete: (res) => {
-        if (res.cancel) {
-      
-        }
-    
+        if (res.cancel) {}
         if (res.confirm) {
           wx.navigateBack();
         }
@@ -27,7 +20,6 @@ Page({
     })
     }else{
     app.globalData.logincondition = false;
-    console.log(app.globalData.logincondition);
     wx.navigateBack();
     }
  

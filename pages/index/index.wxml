@@ -1,103 +1,59 @@
 <swiper class="lunbotu" indicator-dots="true" indicator-color="pink" indicator-active-color="yellow"
 autoplay="true" interval="2000" circular="false">
-<block wx:for="{{carousel}}" wx:key="id">
-  <swiper-item class="lunbotu" bindtap="onclick">
-  <image src="{{carousel[index].imageFrontUrl}}" class="lunbotu1"/>
-  </swiper-item>
-</block>
+  <block wx:for="{{carousel}}" wx:key="id">
+    <swiper-item class="lunbotu" bindtap="onclick">
+      <image src="{{carousel[index].imageFrontUrl}}" class="lunbotu1"/>
+    </swiper-item>
+  </block>
 </swiper> 
 <!-- 分类控制 -->
 <van-tabs  bind:change="onChange" type="line" swipeable class="position">
-<van-tab title="全部" name="all" class="item" >
-<scroll-view scroll-y class="xiaofenleidaohanglanneironghuadongkuang" style="height: {{height-421.875/scale-55+12}}px" > 
-<block wx:for="{{classification}}" wx:key="id">
-<view class="xiaofenleidaohanglanneirong" >
-<image src="{{classification[index].imageFrontUrl}}" class="xiaofenleidaohanglanneirongimage"></image>
-<van-button plain hairline type="info" size="small" bindtap="onclickmake" data-param1="{{classification[index].imageFrontUrl}}" data-param2="{{classification[index].imageContraryUrl}}" class="xiaofenleineirongbutton1">制作</van-button>
-<van-button plain hairline type="info" size="small"  bindtap="onclickpreview" data-param1="{{classification[index].imageFrontUrl}}" data-param2="{{classification[index].imageContraryUrl}}" class="xiaofenleineirongbutton2">预览</van-button>
-</view></block>  <view class="scrollSpase"></view></scroll-view>
-</van-tab>
-  <van-tab title="节日" name="festival">
-    <scroll-view scroll-y class="xiaofenleidaohanglanneironghuadongkuang" style="height: {{height-421.875/scale-55+12}}px" > 
-<block wx:for="{{classification}}" wx:key="id">
-<view class="xiaofenleidaohanglanneirong" >
-<image src="{{classification[index].imageFrontUrl}}" class="xiaofenleidaohanglanneirongimage"></image>
-<van-button plain hairline type="info" size="small" bindtap="onclickmake" data-param1="{{classification[index].imageFrontUrl}}" data-param2="{{classification[index].imageContraryUrl}}" class="xiaofenleineirongbutton1">制作</van-button>
-<van-button plain hairline type="info" size="small"  bindtap="onclickpreview" data-param1="{{classification[index].imageFrontUrl}}" data-param2="{{classification[index].imageContraryUrl}}" class="xiaofenleineirongbutton2">预览</van-button>
-</view></block>  <view class="scrollSpase"></view></scroll-view>
-</van-tab>
-  <van-tab title="情人" name="lover">
-<scroll-view scroll-y class="xiaofenleidaohanglanneironghuadongkuang" style="height: {{height-421.875/scale-55+12}}px" > 
-<block wx:for="{{classification}}" wx:key="id">
-<view class="xiaofenleidaohanglanneirong" >
-<image src="{{classification[index].imageFrontUrl}}" class="xiaofenleidaohanglanneirongimage"></image>
-<van-button plain hairline type="info" size="small" bindtap="onclickmake" data-param1="{{classification[index].imageFrontUrl}}" data-param2="{{classification[index].imageContraryUrl}}" class="xiaofenleineirongbutton1">制作</van-button>
-<van-button plain hairline type="info" size="small"  bindtap="onclickpreview" data-param1="{{classification[index].imageFrontUrl}}" data-param2="{{classification[index].imageContraryUrl}}" class="xiaofenleineirongbutton2">预览</van-button>
-</view></block>  <view class="scrollSpase"></view></scroll-view>
-</van-tab>
-  
-  <van-tab title="生日" name="birthday">
-  
-<scroll-view scroll-y class="xiaofenleidaohanglanneironghuadongkuang" style="height: {{height-421.875/scale-55+12}}px" > 
-<block wx:for="{{classification}}" wx:key="id">
-<view class="xiaofenleidaohanglanneirong" >
-<image src="{{classification[index].imageFrontUrl}}" class="xiaofenleidaohanglanneirongimage"></image>
-<van-button plain hairline type="info" size="small" bindtap="onclickmake" data-param1="{{classification[index].imageFrontUrl}}" data-param2="{{classification[index].imageContraryUrl}}" class="xiaofenleineirongbutton1">制作</van-button>
-<van-button plain hairline type="info" size="small"  bindtap="onclickpreview" data-param1="{{classification[index].imageFrontUrl}}" data-param2="{{classification[index].imageContraryUrl}}" class="xiaofenleineirongbutton2">预览</van-button>
-</view></block>  <view class="scrollSpase"></view></scroll-view>
-  </van-tab>
-  
-  <van-tab title="新年" name="newyear" >
-
-    <scroll-view scroll-y class="xiaofenleidaohanglanneironghuadongkuang" style="height: {{height-421.875/scale-55+12}}px" > 
-<block wx:for="{{classification}}" wx:key="id">
-<view class="xiaofenleidaohanglanneirong" >
-<image src="{{classification[index].imageFrontUrl}}" class="xiaofenleidaohanglanneirongimage"></image>
-<van-button plain hairline type="info" size="small" bindtap="onclickmake" data-param1="{{classification[index].imageFrontUrl}}" data-param2="{{classification[index].imageContraryUrl}}" class="xiaofenleineirongbutton1">制作</van-button>
-<van-button plain hairline type="info" size="small"  bindtap="onclickpreview" data-param1="{{classification[index].imageFrontUrl}}" data-param2="{{classification[index].imageContraryUrl}}" class="xiaofenleineirongbutton2">预览</van-button>
-</view></block>  <view class="scrollSpase"></view></scroll-view>
-  </van-tab>
-  
-  <van-tab title="父母" name="parents">
-    
-<scroll-view scroll-y class="xiaofenleidaohanglanneironghuadongkuang" style="height: {{height-421.875/scale-55+12}}px" > 
-<block wx:for="{{classification}}" wx:key="id">
-<view class="xiaofenleidaohanglanneirong" >
-<image src="{{classification[index].imageFrontUrl}}" class="xiaofenleidaohanglanneirongimage"></image>
-<van-button plain hairline type="info" size="small" bindtap="onclickmake" data-param1="{{classification[index].imageFrontUrl}}" data-param2="{{classification[index].imageContraryUrl}}" class="xiaofenleineirongbutton1">制作</van-button>
-<van-button plain hairline type="info" size="small"  bindtap="onclickpreview" data-param1="{{classification[index].imageFrontUrl}}" data-param2="{{classification[index].imageContraryUrl}}" class="xiaofenleineirongbutton2">预览</van-button>
-</view></block>  <view class="scrollSpase"></view></scroll-view>
-  </van-tab>
-  
-  <van-tab title="教师" name="teachers">
-
-    <scroll-view scroll-y class="xiaofenleidaohanglanneironghuadongkuang" style="height: {{height-421.875/scale-55+12}}px" > 
-<block wx:for="{{classification}}" wx:key="id">
-<view class="xiaofenleidaohanglanneirong" >
-<image src="{{classification[index].imageFrontUrl}}" class="xiaofenleidaohanglanneirongimage"></image>
-<van-button plain hairline type="info" size="small" bindtap="onclickmake" data-param1="{{classification[index].imageFrontUrl}}" data-param2="{{classification[index].imageContraryUrl}}" class="xiaofenleineirongbutton1">制作</van-button>
-<van-button plain hairline type="info" size="small"  bindtap="onclickpreview" data-param1="{{classification[index].imageFrontUrl}}" data-param2="{{classification[index].imageContraryUrl}}" class="xiaofenleineirongbutton2">预览</van-button>
-</view></block>  <view class="scrollSpase"></view></scroll-view>
-  </van-tab>
-  
-  <van-tab title="友情" name="friends">
-
-    <scroll-view scroll-y class="xiaofenleidaohanglanneironghuadongkuang" style="height: {{height-421.875/scale-55+12}}px" > 
-<block wx:for="{{classification}}" wx:key="id">
-<view class="xiaofenleidaohanglanneirong" >
-<image src="{{classification[index].imageFrontUrl}}" class="xiaofenleidaohanglanneirongimage"></image>
-<van-button plain hairline type="info" size="small" bindtap="onclickmake" data-param1="{{classification[index].imageFrontUrl}}" data-param2="{{classification[index].imageContraryUrl}}" class="xiaofenleineirongbutton1">制作</van-button>
-<van-button plain hairline type="info" size="small"  bindtap="onclickpreview" data-param1="{{classification[index].imageFrontUrl}}" data-param2="{{classification[index].imageContraryUrl}}" class="xiaofenleineirongbutton2">预览</van-button>
-</view></block>  <view class="scrollSpase"></view></scroll-view>
-  </van-tab>
-  
-  <van-tab title="周年" name="anniversary">
-<scroll-view scroll-y class="xiaofenleidaohanglanneironghuadongkuang" style="height: {{height-421.875/scale-55+12}}px" > 
-<block wx:for="{{classification}}" wx:key="id">
-<view class="xiaofenleidaohanglanneirong" >
-<image src="{{classification[index].imageFrontUrl}}" class="xiaofenleidaohanglanneirongimage"></image>
-<van-button plain hairline type="info" size="small" bindtap="onclickmake" data-param1="{{classification[index].imageFrontUrl}}" data-param2="{{classification[index].imageContraryUrl}}" class="xiaofenleineirongbutton1">制作</van-button>
-<van-button plain hairline type="info" size="small"  bindtap="onclickpreview" data-param1="{{classification[index].imageFrontUrl}}" data-param2="{{classification[index].imageContraryUrl}}" class="xiaofenleineirongbutton2">预览</van-button>
-</view></block>  <view class="scrollSpase"></view></scroll-view>
-  </van-tab>
+    <van-tab title="全部" name="all" class="item" >
+        <scroll-view scroll-y class="xiaofenleidaohanglanneironghuadongkuang" style="height: {{height-421.875/scale-55+12}}px" > 
+            <block wx:for="{{classification}}" wx:key="id">
+                <view class="xiaofenleidaohanglanneirong" >
+                    <image src="{{classification[index].imageFrontUrl}}" class="xiaofenleidaohanglanneirongimage"></image>
+                    <van-button plain hairline type="info" size="small" bindtap="onclickmake" data-param1="{{classification[index].imageFrontUrl}}" data-param2="{{classification[index].imageContraryUrl}}" class="xiaofenleineirongbutton1">制作</van-button>
+                    <van-button plain hairline type="info" size="small"  bindtap="onclickpreview" data-param1="{{classification[index].imageFrontUrl}}" data-param2="{{classification[index].imageContraryUrl}}" class="xiaofenleineirongbutton2">预览</van-button>
+                </view>
+            </block>  
+            <view class="scrollSpase"></view>
+        </scroll-view>
+    </van-tab>
+    <van-tab title="节日" name="festival">
+        <scroll-view scroll-y class="xiaofenleidaohanglanneironghuadongkuang" style="height: {{height-421.875/scale-55+12}}px" > 
+            <block wx:for="{{classification}}" wx:key="id">
+                <view class="xiaofenleidaohanglanneirong" >
+                    <image src="{{classification[index].imageFrontUrl}}" class="xiaofenleidaohanglanneirongimage"></image>
+                    <van-button plain hairline type="info" size="small" bindtap="onclickmake" data-param1="{{classification[index].imageFrontUrl}}" data-param2="{{classification[index].imageContraryUrl}}" class="xiaofenleineirongbutton1">制作</van-button>
+                    <van-button plain hairline type="info" size="small"  bindtap="onclickpreview" data-param1="{{classification[index].imageFrontUrl}}" data-param2="{{classification[index].imageContraryUrl}}" class="xiaofenleineirongbutton2">预览</van-button>
+                </view>
+            </block>  
+            <view class="scrollSpase"></view>
+        </scroll-view>
+    </van-tab>
+    <van-tab title="情人" name="lover">
+        <scroll-view scroll-y class="xiaofenleidaohanglanneironghuadongkuang" style="height: {{height-421.875/scale-55+12}}px" > 
+            <block wx:for="{{classification}}" wx:key="id">
+                <view class="xiaofenleidaohanglanneirong" >
+                    <image src="{{classification[index].imageFrontUrl}}" class="xiaofenleidaohanglanneirongimage"></image>
+                    <van-button plain hairline type="info" size="small" bindtap="onclickmake" data-param1="{{classification[index].imageFrontUrl}}" data-param2="{{classification[index].imageContraryUrl}}" class="xiaofenleineirongbutton1">制作</van-button>
+                    <van-button plain hairline type="info" size="small"  bindtap="onclickpreview" data-param1="{{classification[index].imageFrontUrl}}" data-param2="{{classification[index].imageContraryUrl}}" class="xiaofenleineirongbutton2">预览</van-button>
+</view>
+            </block>  
+            <view class="scrollSpase"></view>
+        </scroll-view>
+    </van-tab>
+    <van-tab title="生日" name="birthday"> 
+        <scroll-view scroll-y class="xiaofenleidaohanglanneironghuadongkuang" style="height: {{height-421.875/scale-55+12}}px" > 
+            <block wx:for="{{classification}}" wx:key="id">
+                <view class="xiaofenleidaohanglanneirong" >
+                  <image src="{{classification[index].imageFrontUrl}}" class="xiaofenleidaohanglanneirongimage"></image>
+                  <van-button plain hairline type="info" size="small" bindtap="onclickmake" data-param1="{{classification[index].imageFrontUrl}}" data-param2="{{classification[index].imageContraryUrl}}" class="xiaofenleineirongbutton1">制作</van-button>
+                  <van-button plain hairline type="info" size="small"  bindtap="onclickpreview" data-param1="{{classification[index].imageFrontUrl}}" data-param2="{{classification[index].imageContraryUrl}}" class="xiaofenleineirongbutton2">预览</van-button>
+                </view>
+            </block>  
+            <view class="scrollSpase"></view>
+          </scroll-view>
+    </van-tab>
 </van-tabs>

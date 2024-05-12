@@ -1,0 +1,71 @@
+/* pages/loginPage/loginPage.wxss */
+.page{
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: auto;
+  background-color: rgb(250, 242, 242);
+  justify-content: center;
+  
+}
+.loginPlace{
+  width: 750rpx;
+  height: 450rpx;
+  background-color: rgb(245, 242, 242);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.username{
+  width: 600rpx;
+  height: 0rpx;
+  background-color: rgb(26, 20, 20);
+}
+.password{
+  width: 600rpx;
+  height: 80rpx;
+  background-color: rgb(248, 233, 233);
+}
+.wxLogin{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-self:flex-end;
+  margin-bottom: 200rpx;
+  box-shadow: 3px 2px #AFC4EA, 3px 3px #AFC4EA, 4px 4px #AFC4EA;
+  margin-left: 0px;
+  margin-top: 0px;
+}
+.wxLogin:hover{
+  box-shadow: 0 0 0 0 black;
+  margin-left: 3px;
+  margin-top: 2px;
+}
+.btn{
+  display: flex;
+  justify-content: center;
+  width: 750rpx;
+}
+.navg{
+  width: 750rpx;
+  height: 120rpx;
+  background: rgb(51, 51, 51);
+  display: flex;
+  align-items:flex-end;
+  justify-content: flex-start;
+}
+.back{
+  width: 60rpx;
+  height: 60rpx;
+  margin-left: 30rpx;
+  margin-bottom: 20rpx;
+}
+.title{
+  margin-bottom: 10rpx;
+  display: flex;
+  width: 750rpx;
+  font-size: 50rpx;
+  justify-content: center;
+}

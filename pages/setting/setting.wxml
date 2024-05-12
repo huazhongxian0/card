@@ -1,5 +1,5 @@
-<view class="container" bind:tap="losecondition">
-<view class="text">
-退出登录
-</view>
+<view class="container" bind:tap="unlogin">
+  <view class="text">
+    退出登录
+  </view>
 </view>

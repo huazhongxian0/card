@@ -10,123 +10,108 @@ Page({
   scale:{},
   height:{},
   token:{},
+  avatar:'../../iconfonts/头像.png'
   },
 
   showPopup() {
     this.setData({ show: true });
   },
   test:function(){
-console.log(tesr);
+    console.log(tesr);
   },
   onClose() {
     this.setData({ show: false });
   },
 
-
-
- wxLogin(){
-   
-   
- },
-
-
   onlogin(){
-    wx.login({ 
-      success: (res) => {
-        this.setData({
-          code:res.code
-        })
-    wx.showModal({
-      title: '温馨提示',
-      content: '微信授权登录后才能正常使用小程序功能',
-      complete: (res) => {
-        if (res.cancel) {
-          
-        }
-    
-        if (res.confirm) {
-          wx.getUserProfile({
-            desc:'您的信息仅作为个人展示噢',
+      wx.login({ 
           success: (res) => {
-              console.log(res);
               this.setData({
-               rawData: res.rawData,
-               signature: res.signature,
-                          })
-               this.setData({
-                avatar: res.userInfo.avatarUrl,
-                wxname: res.userInfo.nickName
-               })
-               wx.request({
-                url: 'https://hez1.cn:8080/wx/login',
-                method:'POST',
-                data: {
-                 code:this.data.code,
-                 rawData:this.data.rawData,
-                 signature:this.data.signature
-                      },
-                 header:{
-            'content-type':'appLication/json',
-                    },
-            success:(result)=>{
-              console.log(result);
-              this.setData({
-              logincondition:true,
-              token:result.data.data
-               })
-               if(this.data.token == null){
-                 wx.checkSession({
-                   success(){
-            console.log("未过期");
-                   },
-                   fail(){
-             this.onlogin()
-                   }
-                 })
-        
-               }else{
-              const app = getApp();
-              app.globalData.logincondition = true;
-              app.globalData.token = result.data.data;
-              console.log(result.data.data);
-            }
-                  },
-             fail:()=>{
-              console.log("发送失败");
-              } 
-                   })
-            },
-            fail: (res) =>{
-                console.log('获取用户信息失败',res)
-                wx.showToast({
-                    title: '信息授权失败~',
-                    duration: 1000,
-                    icon: 'error',
-                    mask: true
-                })
-              },
-              complete:()=>{
-                wx.hideLoading();
-              }
+                  code:res.code
+              })
+              wx.showModal({
+                title: '温馨提示',
+                content: '微信授权登录后才能正常使用小程序功能',
+                complete: (res) => {
+                  if (res.cancel) {}
+                  if (res.confirm) {
+                      wx.getUserProfile({
+                        desc:'您的信息仅作为个人展示噢',
+                        success: (res) => {
+                            console.log(res);
+                            this.setData({
+                              rawData: res.rawData,
+                              signature: res.signature,
+                              avatar: res.userInfo.avatarUrl,
+                              wxname: res.userInfo.nickName
+                            })
+                      //  this.setData({
+                      //       avatar: res.userInfo.avatarUrl,
+                      //       wxname: res.userInfo.nickName
+                      //   })
+                           wx.request({
+                              url: 'https://hez1.cn:8080/wx/login',
+                              method:'POST',
+                              data: {
+                                  code:this.data.code,
+                                  rawData:this.data.rawData,
+                                  signature:this.data.signature
+                              },
+                              header:{
+                                  'content-type':'appLication/json',
+                              },
+                              success:(result)=>{
+                                console.log(result);
+                                this.setData({
+                                    logincondition:true,
+                                    token:result.data.data
+                                })
+                                if(this.data.token == null){
+                                    wx.checkSession({
+                                      success(){
+                                        console.log("未过期");
+                                      },
+                                      fail(){
+                                        this.onlogin()
+                                      }
+                                    })
+                                }else{
+                                const app = getApp();
+                                app.globalData.logincondition = true;
+                                app.globalData.token = result.data.data;
+                                console.log(result.data.data);
+                                }
+                              },
+                              fail:()=>{
+                                  console.log("发送失败");
+                              } 
+                            })
+                          },
+                        fail: (res) =>{
+                            console.log('获取用户信息失败',res)
+                            wx.showToast({
+                              title: '信息授权失败~',
+                              duration: 1000,
+                              icon: 'error',
+                              mask: true
+                            })
+                        },
+                        complete:()=>{
+                          wx.hideLoading();
+                        }
         })
         }
       }
-    })
-   },
-   fail:(e)=>{
-console.log("失败了",e);
-   }
-   
-  
-  })
+              })
+          },
+          fail:(e)=>{
+              console.log("失败了",e);
+          }
+      })
   },
-
-
-
-onlogin2(){
-this.onlogin();
-
-},
+  onlogin2(){
+      this.onlogin();
+  },
 
   tosetting:function () {
     wx.navigateTo({
@@ -139,11 +124,11 @@ this.onlogin();
   onLoad(options) {
         const a = getApp();
         this.setData({
-     logincondition:a.globalData.logincondition,
-     scale :750/a.globalData.screen,
-     height:a.globalData.screenHeight
+          logincondition:a.globalData.logincondition,
+          scale :750/a.globalData.screen,
+          height:a.globalData.screenHeight
         })
-     
+        
   },
 
   /**
@@ -158,9 +143,14 @@ this.onlogin();
    */
   onShow() {
     const app = getApp();
-this.setData({
-logincondition : app.globalData.logincondition
-})
+      // this.setData({
+      //   logincondition : app.globalData.logincondition
+      // })
+      if(app.globalData.logincondition !== true){
+          wx.navigateTo({
+            url: '../loginPage/loginPage',
+          })
+      }
   },
 
   /**

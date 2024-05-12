@@ -1,28 +1,30 @@
 /* pages/dafenlei/dafenlei.wxss */
 page {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-
-  min-height: 100vh;
-filter: brightness(100%);
-scroll-behavior: smooth;
-background-color: rgb(253, 208, 208);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    min-height: 100vh;
+    filter: brightness(100%);
+    scroll-behavior: smooth;
+    background-color: white;
+    perspective: 100rpx;
 }
 .container{
-  background-color: rgb(253, 252, 252);
-  width: 600rpx;
-  height: 150rpx;
-  margin-top: 50rpx;
-  position: absolute;
-   margin-left: 75rpx;
-   border-radius: 50rpx;
-   box-shadow: 0rpx 5rpx 20rpx 0rpx black;
+    background-color: rgb(253, 252, 252);
+    width: 400rpx;
+    height: 100rpx;
+    margin-top: 50rpx;
+    border-radius: 50rpx;
+    box-shadow: 0rpx 5rpx 20rpx 0rpx rgb(190, 174, 174);
+    display: flex;
+    justify-content: center;
 }
-.text{
-padding-top: 60rpx;
-font-size: 120%;
+.container:active{
+  transform: translateZ(1rpx);
+  border: 1rpx solid rgb(190, 174, 174);
+  box-shadow: 0rpx 0rpx 0rpx 0rpx rgb(190, 174, 174);
 }

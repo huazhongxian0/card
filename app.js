@@ -1,24 +1,22 @@
 // app.js
 App({
-  
 globalData:{
 logincondition:false,
 avatar:'',
-wxname:'',
+wxName:'默认微信名',
 token:'',
 screen:{},
 screenHeight:{},
 },
 
   onLaunch: function () {
-  wx.getSystemInfo({
-    success:(e)=>{
-console.log(e);
-this.globalData.screen = e.screenWidth;
-this.globalData.screenHeight = e.windowHeight;
-    },
-  })
+    wx.getSystemInfo({
+      success:(e)=>{
+        this.globalData.screen = e.screenWidth;
+        this.globalData.screenHeight = e.windowHeight;
       },
+    })
+  },
 
   /**
    * 当小程序启动，或从后台进入前台显示，会触发 onShow

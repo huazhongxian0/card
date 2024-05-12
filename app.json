@@ -2,7 +2,6 @@
   "pages": [
     "pages/index/index",
     "pages/user/user",
-    "pages/dafenlei/dafenlei",
     "pages/setting/setting",
     "pages/make/make",
     "pages/preview/preview",
@@ -11,7 +10,8 @@
     "pages/history/history",
     "pages/feedback/feedback",
     "pages/feedback/write/write",
-    "pages/share/share"
+    "pages/share/share",
+    "pages/loginPage/loginPage"
   ],
   "window": {
     "disableScroll": true,
@@ -23,7 +23,7 @@
   },
   "tabBar": {
     "backgroundColor": "#333333",
-    "color": "#350000",
+    "color": "#707070",
     "selectedColor": "#ffffff",
     "list": [
       {
@@ -59,6 +59,8 @@
     "van-icon": "@vant/weapp/icon/index",
     "van-loading": "@vant/weapp/loading/index",
     "van-tabbar": "@vant/weapp/tabbar/index",
-    "van-tabbar-item": "@vant/weapp/tabbar-item/index"
+    "van-tabbar-item": "@vant/weapp/tabbar-item/index",
+    "van-field": "@vant/weapp/field/index",
+    "van-toast": "@vant/weapp/toast/index"
   }
 }
